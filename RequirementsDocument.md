@@ -1,8 +1,8 @@
 # Assignment 1 - Mock Stack Overflow Requirements Document
-Authors: John Jacoby, 
-Course: CS500 - Foundations of Software Engineering 
-Term: Spring 2024 
-Professor: Joydeep Mitra
+Authors: John Jacoby,  
+Course: CS500 - Foundations of Software Engineering  
+Term: Spring 2024  
+Professor: Joydeep Mitra 
 
 ## Requirements Specification
 
@@ -117,6 +117,38 @@ Professor: Joydeep Mitra
 - **Pre-condition**: Moderator must be authenticated and authorized to perform moderation tasks.
 - **Post-condition**: The post is edited, deleted, or flagged as per the moderator's action, influencing its visibility and status on the site.
 - **Side effects**: Potential change in the content available on the site, or the content's appearance if flagged or edited.
+
+## Requirements Validation
+### 1. View Posts
+- The user visits a screen, such as search results screen, that displays a list of posts => The list of appropriate posts is displayed
+
+### 2. Create New Posts
+- The user writes and submits a new post => The post is added to the database, where it is available for access i.e. by the Serach Posts and View Posts functions
+
+### 3. Search for Existing Posts
+- The user makes a search for which there are no matching results in the database => The user gets a message explaining that there are no results
+- The user makes a search for which there are matching results in the database => The users sees those search results
+
+### 4. Commenting on Posts
+- The user adds a comment => The comment is added to the database and associated with the post the comment was made on.
+
+### 5. Voting on Posts
+- The user votes a post 'up' => The post's vote value is incremented in the database
+- The user votes a post 'down' => The post's vote value is decremented in the database
+
+### 6. Tagging Posts
+- The user adds a tag to a post during post creation process => If/when the post is actually submitted, it is added to the database with an association to the tag.
+
+### 7. User Profiles
+- The user create a profile => The profile is added to the database. 
+- The user deletes their profile => The profile is removed from the database.
+- The user edits their profile => The profile is updated in the database to reflect the edits.
+- The user goes to their profile page => Profile data is pulled from the database and displayed on the screen.
+
+### 8. Post Moderation
+- A moderator deletes a post => The post is removed from the database and therefore not visible to anyone anymore.
+- A moderator edits a post => The post content is changed in the database
+- A moderator flags a post => The flag is represented with a value in the database, and users viewing the post see a notification of the flag and the moderator's explanation of the flag.
 
 ## Simplifying Assumptions
 1. We are only supporting English
